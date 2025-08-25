@@ -11,7 +11,7 @@ const EditarLivro = () => {
     const fetchLivro = async () => {
       try {
         const data = await LivroService.getLivroById(id);  // Busca o livro pelo ID
-        setLivro(data);  // Atualiza o estado com os dados do livro
+        setLivro(data.livro);  // Atualiza o estado com os dados do livro
       } catch (error) {
         console.error('Erro ao buscar livro:', error);  // Tratar erro de busca
       }

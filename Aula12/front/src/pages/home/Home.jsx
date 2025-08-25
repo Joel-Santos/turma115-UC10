@@ -28,6 +28,10 @@ const Home = () => {
     }
   };
 
+  const handleEdit = async (id) => {
+    navigate(`/livro/editar/${id}`);
+  };
+
   return (
     <div className="container mx-auto p-6">
       <button 
@@ -38,7 +42,7 @@ const Home = () => {
       </button>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {livros.map((livro) => (
-          <BookCard key={livro.id} livro={livro} onDelete={handleDelete} />
+          <BookCard key={livro.id} livro={livro} onDelete={handleDelete} onEdit={handleEdit} />
         ))}
       </div>
     </div>

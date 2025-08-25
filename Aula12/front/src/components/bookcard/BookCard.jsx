@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const BookCard = ({ livro, onDelete }) => {
+const BookCard = ({ livro, onDelete, onEdit }) => {
   return (
     <div className="bg-white p-4 m-4 rounded-lg shadow-md w-60">
       <h2 className="text-xl font-bold">{livro.titulo}</h2>
@@ -13,6 +13,12 @@ const BookCard = ({ livro, onDelete }) => {
         className="mt-2 text-red-500 hover:text-red-700"
       >
         Deletar
+      </button>
+      <button 
+        onClick={() => onEdit(livro.id)} 
+        className="mt-2 text-blue-500 hover:text-blue-700"
+      >
+        Editar
       </button>
     </div>
   );

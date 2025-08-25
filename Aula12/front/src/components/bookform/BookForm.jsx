@@ -10,10 +10,47 @@ const BookForm = ({ livroEdit }) => {
   const [preco, setPreco] = useState('');
   const navigate = useNavigate();
 
-  const generos = [
-    "Romance", "Ficção Científica", "Fantasia", "Mistério", "Suspense", "Terror", "Aventura"
-    // Outros gêneros...
-  ];
+  const generos= [
+    "Romance",
+    "Ficção Científica",
+    "Fantasia",
+    "Mistério",
+    "Suspense",
+    "Terror",
+    "Aventura",
+    "Drama",
+    "Histórico",
+    "Biografia",
+    "Autobiografia",
+    "Poesia",
+    "Humor",
+    "Literatura Clássica",
+    "Literatura Contemporânea",
+    "Infantojuvenil",
+    "Young Adult (YA)",
+    "Distopia",
+    "Realismo Mágico",
+    "Crônicas",
+    "Ensaios",
+    "Autoajuda",
+    "Espiritualidade",
+    "Religião",
+    "Filosofia",
+    "Psicologia",
+    "Ciências Sociais",
+    "Política",
+    "Economia",
+    "Educação",
+    "Tecnologia",
+    "Negócios",
+    "Direito",
+    "Medicina",
+    "Ecologia",
+    "Viagens",
+    "Gastronomia",
+    "Arte",
+    "Fotografia"
+];
 
   useEffect(() => {
     if (livroEdit) {
@@ -53,13 +90,15 @@ const BookForm = ({ livroEdit }) => {
       <input 
         type="text" 
         placeholder="Título" 
+        name="titulo"
         value={titulo} 
         onChange={(e) => setTitulo(e.target.value)} 
         className="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         required
       />
       <input 
-        type="text" 
+        type="text"
+        name="autor" 
         placeholder="Autor" 
         value={autor} 
         onChange={(e) => setAutor(e.target.value)} 
@@ -68,6 +107,7 @@ const BookForm = ({ livroEdit }) => {
       />
       <input 
         type="number" 
+        name="ano_publicacao"
         placeholder="Ano de Publicação" 
         value={ano_publicacao} 
         onChange={(e) => setAnoPublicacao(e.target.value)} 
@@ -76,6 +116,7 @@ const BookForm = ({ livroEdit }) => {
       />
       <select 
         value={genero} 
+        name="genero"
         onChange={(e) => setGenero(e.target.value)} 
         className="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         required
@@ -86,6 +127,7 @@ const BookForm = ({ livroEdit }) => {
       </select>
       <input 
         type="number" 
+        name="preco"
         placeholder="Preço" 
         value={preco} 
         onChange={(e) => setPreco(e.target.value)} 

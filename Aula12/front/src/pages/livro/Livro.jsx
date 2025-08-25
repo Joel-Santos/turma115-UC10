@@ -11,7 +11,8 @@ const Livro = () => {
     const fetchLivro = async () => {
       try {
         const data = await LivroService.getLivroById(id);  // Busca o livro com o ID
-        setLivro(data);  // Atualiza o estado com o livro encontrado
+        setLivro(data.livro);  // Atualiza o estado com o livro encontrado
+        console.log(data);
       } catch (error) {
         console.error('Erro ao buscar livro:', error);
       }
